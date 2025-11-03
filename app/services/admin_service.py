@@ -353,7 +353,7 @@ class AdminService:
             action=action,
             entity_type=entity_type,
             entity_id=entity_id,
-            details=details,
+            changes={"details": details} if details else None,
             ip_address=ip_address
         )
         self.db.add(log)
