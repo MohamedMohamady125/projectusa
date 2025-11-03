@@ -22,8 +22,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire project
 COPY . .
 
-# Expose port (Railway will override this with PORT env variable)
+# Expose default port
 EXPOSE 8000
 
-# Command to run the application - CORRECTED PATH
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run using Python script that handles PORT properly
+CMD ["python", "start.py"]
